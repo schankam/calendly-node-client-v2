@@ -8,7 +8,7 @@ export class UserService {
     return this.httpClient.get(`/users/${uuid}`);
   }
 
-  getCurrentUser(): Promise<User> {
+  async getCurrentUser(): Promise<User> {
     return this.httpClient.get('/users/me').then(result => result.data?.resource as User);
   }
 }
